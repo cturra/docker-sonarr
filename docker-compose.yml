@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  sonarr:
+    build: .
+    image: cturra/sonarr:latest
+    container_name: sonarr
+    restart: always
+    ports:
+      - 8989:8989
+    volumes:
+      - /data/sonarr/config:/volumes/config/sonarr
+      - /media/tv:/volumes/media
+      - /data/downloads/complete:/data/downloads/complete

@@ -1,0 +1,26 @@
+#
+# this file contains a number of global variables used
+# by the docker container and its scripts. update any
+# of these to be appropriate for your environment.
+#
+IMAGE_NAME="cturra/sonarr"
+CONTAINER_NAME="sonarr"
+
+# sonarr configuration directory
+# ... on docker host (EXTernal)
+EXT_CONFIG_DIR="/data/sonarr/config"
+# ... in docker container (INTernal)
+INT_CONFIG_DIR="/volumes/config/sonarr"
+
+# media location
+# ... on docker host (EXTernal)
+EXT_MEDIA_DIR="/media/tv"
+# ... in docker container (INTernal)
+INT_MEDIA_DIR="/volumes/media"
+
+# download (complete) directory 
+# ... on docker host (EXTernal)
+EXT_DOWNLOAD_DIR="/data/downloads/complete"
+# ... in docker container (INTernal)
+INT_DOWNLOAD_DIR="/data/downloads/complete"
+
