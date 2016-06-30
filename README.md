@@ -21,11 +21,16 @@ $> docker-compose up -d sonarr
 $> docker-compose logs sonarr
 ```
 
+
 Building and Running with Docker engine
 ---
 Using the `vars` file in this git repo, you can update any of the variables to
-reflect your environment. Once updated, simply execute the `run.sh` script.
+reflect your environment. Once updated, simply execute the `build` then `run` scripts.
 
 ```
+# build sonarr
+$> ./build.sh
+
+# run sonarr
 $> ./run.sh
 ```
