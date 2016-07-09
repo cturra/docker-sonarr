@@ -5,6 +5,23 @@ This container runs the Sonarr PVR service. More about Sonarr can be found at:
   https://sonarr.tv
 
 
+Running from Docker Hub
+---
+Pull and run -- it's this simple.
+
+```
+# pull from docker hub
+$> docker pull cturra/sonarr
+
+# run sonarr
+$> docker run --name=sonarr --restart=always --detach=true           \
+              --volume=/path/to/config/dir:/volumes/config/sonarr    \
+              --volume=/path/to/media/dir:/volumes/media             \
+              --volume=/path/to/download/dir:/data/downloads/complet \
+              --publish=8989:8989 cturra/sonarr
+```
+
+
 Building and Running with Docker Compose
 ---
 Using the `docker-compose.yml` file included in this git repo, you can build
