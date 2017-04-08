@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-MAINTAINER chris turra <cturra@gmail.com>
-
 ENV DEBIAN_FRONTEND noninteractive
 
 # setup and install mono (key: D3D831EF) / sonarr (key: FDA5DFFC)
