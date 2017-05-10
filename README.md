@@ -14,10 +14,11 @@ Pull and run -- it's this simple.
 $> docker pull cturra/sonarr
 
 # run sonarr
-$> docker run --name=sonarr --restart=always --detach=true           \
-              --volume=/path/to/config/dir:/volumes/config/sonarr    \
-              --volume=/path/to/media/dir:/volumes/media             \
-              --volume=/path/to/download/dir:/data/downloads/complet \
+$> docker run --name=sonarr --restart=always --detach=true            \
+              --volume=/etc/localtime:/etc/localtime:ro               \
+              --volume=/path/to/config/dir:/volumes/config/sonarr     \
+              --volume=/path/to/media/dir:/volumes/media              \
+              --volume=/path/to/download/dir:/data/downloads/complete \
               --publish=8989:8989 cturra/sonarr
 ```
 

@@ -9,6 +9,7 @@ services:
     ports:
       - 8989:8989
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /data/sonarr/config:/volumes/config/sonarr
       - /media/tv:/volumes/media
       - /data/downloads/complete:/data/downloads/complete
