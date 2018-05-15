@@ -14,22 +14,25 @@ Pull and run -- it's this simple.
 $> docker pull cturra/sonarr
 
 # run sonarr
-$> docker run --name=sonarr --restart=always --detach=true            \
+$> docker run --name=sonarr                                           \
+              --restart=always                                        \
+              --detach=true                                           \
+              --publish=8989:8989                                     \
               --volume=/etc/localtime:/etc/localtime:ro               \
               --volume=/path/to/config/dir:/volumes/config/sonarr     \
               --volume=/path/to/media/dir:/volumes/media              \
               --volume=/path/to/download/dir:/data/downloads/complete \
-              --publish=8989:8989 cturra/sonarr
+              cturra/sonarr
 ```
 
 
-Building and Running with Docker Compose
+Build and Running with Docker Compose
 ---
 Using the `docker-compose.yml` file included in this git repo, you can build
 the container yourself (should you choose to).
 
 ```
-# buid sonarr
+# build sonarr
 $> docker-compose build sonarr
 
 # run sonarr
