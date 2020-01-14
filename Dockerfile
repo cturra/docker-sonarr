@@ -1,14 +1,14 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
-# prep, config and install mono and sonarr
+# prep/config mono and sonarr
 RUN apt-get -q update      \
  && apt-get -y --no-install-recommends install dirmngr   \
                                                gpg       \
                                                gpg-agent
 
-# setup mono (key: D3D831EF) / sonarr (key: FDA5DFFC) repos
+# fetch/install/setup for mono (key: D3D831EF) / sonarr (key: FDA5DFFC)
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF            \
  && echo "deb http://download.mono-project.com/repo/debian stable-bionic main" > /etc/apt/sources.list.d/mono.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0xA236C58F409091A18ACA53CBEBFF6B99D9B78493            \
